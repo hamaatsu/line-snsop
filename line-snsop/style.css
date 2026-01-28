@@ -1,14 +1,13 @@
 /* 全体設定 */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f4f7f9; /* 清潔感のあるグレーブルー */
+  background: #f4f7f9;
   color: #333;
 }
 
-/* コンテナ（外枠） */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -17,25 +16,23 @@ body {
   background: #fff;
 }
 
-/* 見出し */
 h1 {
-  font-size: 1.6rem;
-  color: #2c3e50; /* 信頼のネイビー */
+  font-size: 1.5rem;
+  color: #2c3e50;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
 p.lead {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* 各セクションの箱 */
 .section {
   margin-bottom: 24px;
-  padding: 20px;
+  padding: 16px;
   border-radius: 10px;
   background: #fff;
   border: 1px solid #e1e8ed;
@@ -43,28 +40,24 @@ p.lead {
 }
 
 .section h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0 0 15px;
   color: #2c3e50;
-  border-left: 5px solid #3498db; /* ブルーのアクセント */
-  padding-left: 12px;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
 }
 
-/* フォームグループ */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .section label {
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
-  color: #2c3e50;
 }
 
-/* 入力エリア共通 */
 .section input[type="text"],
-.section input[type="number"],
 .section select,
 .section textarea {
   width: 100%;
@@ -73,73 +66,65 @@ p.lead {
   border-radius: 6px;
   font-size: 16px;
   box-sizing: border-box;
-  font-family: inherit;
-  background: #fff;
 }
 
-/* チェックボックスのグリッドレイアウト */
+/* --- チェックボックス項目の修正 --- */
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 12px;
+  grid-template-columns: 1fr; /* スマホ・PC共通で1列（必要ならPCのみ2列に調整可） */
+  gap: 8px;
 }
 
-/* ★スマホで改行されないための修正ポイント★ */
 .question-item {
-  display: flex;           /* 横並びを強制 */
-  align-items: flex-start; /* 上揃え */
-  font-size: 0.95rem;
-  padding: 10px 12px;
+  display: flex !important;
+  align-items: center !important; /* ★ここを中央揃えに修正 */
+  padding: 14px 12px !important;  /* 上下の余白を均等に */
   background: #f8fafc;
   border-radius: 8px;
   cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s;
 }
 
+/* チェックボックス本体 */
 .question-item input[type="checkbox"] {
-  width: 20px;             /* サイズを固定 */
-  height: 20px;
-  margin-right: 12px;      /* 右側の文字との間隔 */
-  margin-top: 2px;
-  flex-shrink: 0;          /* 狭くてもチェックボックスを潰さない */
+  width: 22px !important;      /* 少し大きくして押しやすく */
+  height: 22px !important;
+  margin: 0 12px 0 0 !important; /* ★余計なマージンを排除 */
+  flex-shrink: 0 !important;   /* 潰さない */
+  cursor: pointer;
+}
+
+/* 文字部分 */
+.question-item span {
+  font-size: 0.95rem;
+  line-height: 1.2;            /* 行間を詰め気味にして中央に寄せやすく */
+  color: #333;
+  pointer-events: none;        /* 文字を触ってもチェック反応するように */
 }
 
 /* ボタンエリア */
 .actions {
   text-align: center;
-  margin: 32px 0 8px;
+  margin-top: 30px;
 }
 
-/* LINE送信ボタン */
 #sendToLineButton {
   display: inline-block;
-  padding: 16px 50px;
+  padding: 16px 40px;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 999px;
   border: none;
-  background: #00b900; /* LINEグリーン */
+  background: #00b900;
   color: #fff;
-  cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0,185,0,0.3);
-  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0,185,0,0.3);
 }
 
-#sendToLineButton:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* スマホ表示調整 */
-@media (max-width: 599px) {
-  h1 { font-size: 1.4rem; }
-  .section { padding: 16px 12px; }
-  .questions-grid { grid-template-columns: 1fr; } /* スマホは1列 */
-  
-  .section input,
-  .section select,
-  .section textarea {
-    padding: 14px 10px;
-    font-size: 16px; /* 入力時にズームされないサイズ */
+/* PC表示（画面幅が広い時）は2列にする */
+@media (min-width: 600px) {
+  .questions-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
