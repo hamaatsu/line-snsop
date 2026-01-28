@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNS運用代行 お見積り・相談票｜株式会社solezore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>SNS運用代行 相談シート</h1>
+    <p class="lead">
+      以下の項目を入力・チェックして、送信ボタンを押してください。<br>
+      LINEが起動し、相談内容が担当者に送信されます。
+    </p>
+
+    <div class="section">
+      <h2>基本情報</h2>
+      <div class="form-group">
+        <label for="companyName">貴社名・屋号</label>
+        <input type="text" id="companyName" placeholder="例：株式会社solezore">
+      </div>
+
+      <div class="form-group">
+        <label for="userName">ご担当者名</label>
+        <input type="text" id="userName" placeholder="例：田中 太郎">
+      </div>
+
+      <div class="form-group">
+        <label for="snsType">対象のSNS（予定含む）</label>
+        <select id="snsType">
+          <option value="">選択してください</option>
+          <option value="Instagram">Instagram</option>
+          <option value="X (Twitter)">X (Twitter)</option>
+          <option value="TikTok">TikTok</option>
+          <option value="YouTube">YouTube</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="currentUrl">現在のアカウントURL（あれば）</label>
+        <input type="text" id="currentUrl" placeholder="https://instagram.com/...">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>現在のお悩み・課題（複数選択可）</h2>
+      <div class="questions-grid">
+        <label class="question-item"><input type="checkbox"><span>投稿を作る時間がない</span></label>
+        <label class="question-item"><input type="checkbox"><span>何を投稿すればいいかわからない</span></label>
+        <label class="question-item"><input type="checkbox"><span>フォロワーが伸び悩んでいる</span></label>
+        <label class="question-item"><input type="checkbox"><span>採用（リクルート）に繋げたい</span></label>
+        <label class="question-item"><input type="checkbox"><span>集客・売上に繋がっていない</span></label>
+        <label class="question-item"><input type="checkbox"><span>社内にSNSのノウハウがない</span></label>
+        <label class="question-item"><input type="checkbox"><span>分析の仕方がわからない</span></label>
+        <label class="question-item"><input type="checkbox"><span>広告運用も検討したい</span></label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>運用目的・ご予算</h2>
+      <div class="form-group">
+        <label for="snsGoal">運用の主な目的</label>
+        <select id="snsGoal">
+          <option value="">選択してください</option>
+          <option value="認知拡大・ブランディング">認知拡大・ブランディング</option>
+          <option value="新規集客・売上アップ">新規集客・売上アップ</option>
+          <option value="採用強化">採用強化</option>
+          <option value="既存顧客との交流">既存顧客との交流</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="snsBudget">月額のご予算感</label>
+        <select id="snsBudget">
+          <option value="">選択してください</option>
+          <option value="5〜10万円">5〜10万円</option>
+          <option value="10〜30万円">10〜30万円</option>
+          <option value="30〜50万円">30〜50万円</option>
+          <option value="50万円以上">50万円以上</option>
+          <option value="相談して決めたい">相談して決めたい</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="form-group">
+        <label for="userNote">その他、ご要望・ご質問</label>
+        <textarea id="userNote" rows="3" placeholder="現状の課題や、具体的な目標などあればご記入ください"></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="sendToLineButton">相談内容をLINEで送る</button>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
