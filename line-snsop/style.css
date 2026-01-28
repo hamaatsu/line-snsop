@@ -1,22 +1,26 @@
+/* 全体設定 */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.7;
   margin: 0;
   padding: 0;
-  background: #f4f7f9; /* 明るいグレーブルー */
+  background: #f4f7f9; /* 清潔感のあるグレーブルー */
   color: #333;
 }
 
+/* コンテナ（外枠） */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 16px 40px;
+  box-sizing: border-box;
   background: #fff;
 }
 
+/* 見出し */
 h1 {
   font-size: 1.6rem;
-  color: #2c3e50; /* ネイビー */
+  color: #2c3e50; /* 信頼のネイビー */
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -28,6 +32,7 @@ p.lead {
   margin-bottom: 2rem;
 }
 
+/* 各セクションの箱 */
 .section {
   margin-bottom: 24px;
   padding: 20px;
@@ -42,54 +47,99 @@ p.lead {
   margin: 0 0 15px;
   color: #2c3e50;
   border-left: 5px solid #3498db; /* ブルーのアクセント */
-  padding-left: 10px;
+  padding-left: 12px;
 }
 
+/* フォームグループ */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+/* 入力エリア共通 */
+.section input[type="text"],
+.section input[type="number"],
+.section select,
+.section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+  background: #fff;
+}
+
+/* チェックボックスのグリッドレイアウト */
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
 }
 
+/* ★スマホで改行されないための修正ポイント★ */
 .question-item {
-  display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-  padding: 8px;
+  display: flex;           /* 横並びを強制 */
+  align-items: flex-start; /* 上揃え */
+  font-size: 0.95rem;
+  padding: 10px 12px;
   background: #f8fafc;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .question-item input[type="checkbox"] {
-  margin-right: 10px;
+  width: 20px;             /* サイズを固定 */
+  height: 20px;
+  margin-right: 12px;      /* 右側の文字との間隔 */
+  margin-top: 2px;
+  flex-shrink: 0;          /* 狭くてもチェックボックスを潰さない */
 }
 
+/* ボタンエリア */
+.actions {
+  text-align: center;
+  margin: 32px 0 8px;
+}
+
+/* LINE送信ボタン */
 #sendToLineButton {
   display: inline-block;
-  padding: 16px 60px;
+  padding: 16px 50px;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 999px;
   border: none;
-  background: #00b900; /* LINEカラー */
+  background: #00b900; /* LINEグリーン */
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 4px 15px rgba(0,185,0,0.3);
-  transition: transform 0.2s;
+  transition: all 0.2s;
 }
 
 #sendToLineButton:hover {
-  transform: translateY(-2px);
   opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-.form-group { margin-bottom: 15px; }
-.section label { display: block; font-weight: bold; margin-bottom: 8px; }
-.section input, .section select, .section textarea {
-  width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; box-sizing: border-box;
-}
-
+/* スマホ表示調整 */
 @media (max-width: 599px) {
-  .questions-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 1.4rem; }
+  .section { padding: 16px 12px; }
+  .questions-grid { grid-template-columns: 1fr; } /* スマホは1列 */
+  
+  .section input,
+  .section select,
+  .section textarea {
+    padding: 14px 10px;
+    font-size: 16px; /* 入力時にズームされないサイズ */
+  }
 }

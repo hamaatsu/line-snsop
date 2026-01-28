@@ -44,8 +44,8 @@ ${note || "なし"}
 
 この内容でSNS運用の相談・見積もりをお願いします。`;
 
-    // 4. LINE起動 (IDは適宜修正してください)
-    const yourLineId = "@281clqmv"; // 必要に応じて変更してください
+    // 4. LINE起動（IDを@011rlbwnに設定）
+    const yourLineId = "@011rlbwn"; 
     const encodedMsg = encodeURIComponent(messageText);
     window.location.href = `https://line.me/R/oaMessage/${yourLineId}/?${encodedMsg}`;
   });
