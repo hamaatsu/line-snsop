@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>インフルエンサー登録フォーム｜株式会社solezore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Influencer Casting</h1>
+    <p class="lead">
+      企業案件のキャスティング登録用シートです。<br>
+      入力後、一番下のボタンからLINEを送信してください。
+    </p>
+
+    <div class="section">
+      <h2>基本情報</h2>
+      <div class="form-group">
+        <label for="userName">活動名（芸名など）</label>
+        <input type="text" id="userName" placeholder="例：インフルエンサー花子">
+      </div>
+      <div class="form-group">
+        <label for="userGender">性別</label>
+        <select id="userGender">
+          <option value="">選択してください</option>
+          <option value="女性">女性</option>
+          <option value="男性">男性</option>
+          <option value="回答しない">回答しない</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="userArea">主な活動エリア・居住地</label>
+        <input type="text" id="userArea" placeholder="例：東京都、大阪府">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>SNS実績</h2>
+      <div class="form-group">
+        <label for="mainSns">メインSNS</label>
+        <input type="text" id="mainSns" placeholder="例：Instagram, TikTok">
+      </div>
+      <div class="form-group">
+        <label for="snsUrl">メインアカウントURL</label>
+        <input type="text" id="snsUrl" placeholder="https://instagram.com/...">
+      </div>
+      <div class="form-group">
+        <label for="followerCount">総フォロワー数（合計）</label>
+        <input type="number" id="followerCount" placeholder="例：15000">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>得意ジャンル（複数選択可）</h2>
+      <div class="questions-grid">
+        <label class="question-item"><input type="checkbox"><span>美容・コスメ</span></label>
+        <label class="question-item"><input type="checkbox"><span>ファッション</span></label>
+        <label class="question-item"><input type="checkbox"><span>ライフスタイル・暮らし</span></label>
+        <label class="question-item"><input type="checkbox"><span>グルメ・カフェ</span></label>
+        <label class="question-item"><input type="checkbox"><span>旅行・ホテル</span></label>
+        <label class="question-item"><input type="checkbox"><span>ガジェット・IT</span></label>
+        <label class="question-item"><input type="checkbox"><span>育児・ママパパ</span></label>
+        <label class="question-item"><input type="checkbox"><span>その他</span></label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>過去のPR経験</h2>
+      <div class="form-group">
+        <label for="userExperience">企業案件（PR）の経験</label>
+        <select id="userExperience">
+          <option value="">選択してください</option>
+          <option value="経験あり（多数）">経験あり（多数）</option>
+          <option value="経験あり（数回）">経験あり（数回）</option>
+          <option value="未経験（これから始めたい）">未経験（これから始めたい）</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="form-group">
+        <label for="userNote">自己PR・フォロワー属性など</label>
+        <textarea id="userNote" rows="3" placeholder="男女比や主な年齢層、過去の代表的な実績があれば教えてください。"></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="sendToLineButton">登録内容をLINEで送る</button>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
