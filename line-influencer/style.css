@@ -59,8 +59,8 @@ p.lead {
   box-sizing: border-box;
 }
 
-/* 年齢分布の入力グリッド */
-.age-distribution-grid {
+/* 属性入力グリッド（男女比・年齢共通） */
+.attribute-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
@@ -70,19 +70,19 @@ p.lead {
   border: 1px dashed #d1d1ff;
 }
 
-.age-input {
+.attr-input {
   display: flex;
   align-items: center;
 }
 
-.age-input span {
-  flex: 0 0 50px;
+.attr-input span {
+  flex: 0 0 55px;
   font-size: 0.8rem;
   color: #5d5cde;
   font-weight: bold;
 }
 
-.age-input input {
+.attr-input input {
   padding: 8px !important;
   font-size: 14px !important;
 }

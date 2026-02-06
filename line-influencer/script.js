@@ -13,8 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = document.getElementById("snsUrl").value;
     const followers = document.getElementById("followerCount").value;
 
-    // フォロワー属性の取得
-    const folGender = document.getElementById("followerGender").value;
+    // 男女比の取得
+    const folGenderMsg = [
+      `男性:${document.getElementById("folMale").value}%`,
+      `女性:${document.getElementById("folFemale").value}%`,
+      `その他:${document.getElementById("folOther").value}%`
+    ].join(' / ');
+
+    // 年齢分布の取得
     const ages = [
       `18-24:${document.getElementById("age18").value}%`,
       `25-34:${document.getElementById("age34").value}%`,
@@ -23,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `55+:${document.getElementById("age55").value}%`
     ].join(' / ');
     
+    // 国籍上位の取得
     const nations = [
       document.getElementById("nation1").value,
       document.getElementById("nation2").value,
@@ -55,7 +62,7 @@ URL：${url || "なし"}
 総フォロワー：${followers || "0"}人
 
 ■フォロワー属性
-男女比：${folGender || "未入力"}
+男女比：${folGenderMsg}
 年齢分布：${ages}
 国籍上位：
 ${nations || "未入力"}
