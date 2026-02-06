@@ -3,7 +3,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f8f7ff; /* 薄いパープルグレー */
+  background: #f8f7ff;
   color: #333;
 }
 
@@ -17,9 +17,9 @@ body {
 
 h1 {
   font-size: 1.6rem;
-  color: #5d5cde; /* インテリジェント・パープル */
+  color: #5d5cde;
   text-align: center;
-  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 }
 
 p.lead {
@@ -59,6 +59,35 @@ p.lead {
   box-sizing: border-box;
 }
 
+/* 年齢分布の入力グリッド */
+.age-distribution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  background: #fdfdff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #d1d1ff;
+}
+
+.age-input {
+  display: flex;
+  align-items: center;
+}
+
+.age-input span {
+  flex: 0 0 50px;
+  font-size: 0.8rem;
+  color: #5d5cde;
+  font-weight: bold;
+}
+
+.age-input input {
+  padding: 8px !important;
+  font-size: 14px !important;
+}
+
+/* チェックボックス項目 */
 .questions-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -72,6 +101,7 @@ p.lead {
   background: #fdfdff;
   border: 1px solid #f0f0ff;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .question-item input[type="checkbox"] {
@@ -80,6 +110,8 @@ p.lead {
   margin: 0 12px 0 0 !important;
   flex-shrink: 0 !important;
 }
+
+.actions { text-align: center; margin-top: 30px; }
 
 #sendToLineButton {
   display: inline-block;
@@ -92,6 +124,7 @@ p.lead {
   color: #fff;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(93, 92, 222, 0.3);
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {

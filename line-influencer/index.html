@@ -53,6 +53,34 @@
     </div>
 
     <div class="section">
+      <h2>フォロワー属性（インサイト）</h2>
+      <div class="form-group">
+        <label for="followerGender">男女比</label>
+        <input type="text" id="followerGender" placeholder="例：女性70%、男性30%">
+      </div>
+
+      <div class="form-group">
+        <label>年齢分布（各年代の割合 %）</label>
+        <div class="age-distribution-grid">
+          <div class="age-input"><span>18-24:</span><input type="text" id="age18" placeholder="%"></div>
+          <div class="age-input"><span>25-34:</span><input type="text" id="age34" placeholder="%"></div>
+          <div class="age-input"><span>35-44:</span><input type="text" id="age44" placeholder="%"></div>
+          <div class="age-input"><span>45-54:</span><input type="text" id="age54" placeholder="%"></div>
+          <div class="age-input"><span>55+:</span><input type="text" id="age55" placeholder="%"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>フォロワーの国籍上位３つ（割合 %）</label>
+        <div class="nationality-inputs">
+          <input type="text" id="nation1" placeholder="1位：日本 90%" style="margin-bottom: 5px;">
+          <input type="text" id="nation2" placeholder="2位：アメリカ 5%" style="margin-bottom: 5px;">
+          <input type="text" id="nation3" placeholder="3位：韓国 3%">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
       <h2>得意ジャンル（複数選択可）</h2>
       <div class="questions-grid">
         <label class="question-item"><input type="checkbox"><span>美容・コスメ</span></label>
@@ -67,7 +95,6 @@
     </div>
 
     <div class="section">
-      <h2>過去のPR経験</h2>
       <div class="form-group">
         <label for="userExperience">企業案件（PR）の経験</label>
         <select id="userExperience">
@@ -77,12 +104,9 @@
           <option value="未経験（これから始めたい）">未経験（これから始めたい）</option>
         </select>
       </div>
-    </div>
-
-    <div class="section">
       <div class="form-group">
-        <label for="userNote">自己PR・フォロワー属性など</label>
-        <textarea id="userNote" rows="3" placeholder="男女比や主な年齢層、過去の代表的な実績があれば教えてください。"></textarea>
+        <label for="userNote">自己PR・その他備考</label>
+        <textarea id="userNote" rows="3" placeholder="過去の代表的な実績や質問などあればご記入ください"></textarea>
       </div>
     </div>
 
