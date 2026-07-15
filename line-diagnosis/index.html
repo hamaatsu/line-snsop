@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNSアカウント無料診断｜株式会社solezore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>SNSアカウント無料診断</h1>
+    <p class="lead">
+      入力後、一番下のボタンからLINEを送信してください。<br>
+      3〜5営業日で診断結果をお返しします。
+    </p>
+
+    <div class="notice">
+      <strong>法人・店舗・専門家・個人クリエイター、いずれも歓迎です。</strong><br>
+      アカウント設計・世界観／コンテンツ設計／アルゴリズム適合／集客・CV導線／競合比較の5観点で診断し、PDFまたは動画解説でお返しします。費用はかかりません。
+    </div>
+
+    <div class="section">
+      <h2>診断するアカウント</h2>
+      <div class="form-group">
+        <label for="targetSns">診断したいSNS</label>
+        <select id="targetSns">
+          <option value="">選択してください</option>
+          <option value="Instagram">Instagram</option>
+          <option value="TikTok">TikTok</option>
+          <option value="X (Twitter)">X (Twitter)</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Threads">Threads</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="accountUrl">アカウントURL</label>
+        <input type="text" id="accountUrl" placeholder="https://instagram.com/...">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>あなたについて</h2>
+      <div class="form-group">
+        <label for="userName">お名前・屋号 <span class="opt">（診断レポートの宛名に使います）</span></label>
+        <input type="text" id="userName" placeholder="例：田中 太郎／〇〇サロン">
+      </div>
+
+      <div class="form-group">
+        <label for="userType">お立場</label>
+        <select id="userType">
+          <option value="">選択してください</option>
+          <option value="法人">法人</option>
+          <option value="店舗">店舗</option>
+          <option value="専門家（士業・医療など）">専門家（士業・医療など）</option>
+          <option value="個人クリエイター">個人クリエイター</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="userGenre">業種・ジャンル</label>
+        <input type="text" id="userGenre" placeholder="例：美容サロン／コスメ／税理士／料理">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>診断で知りたいこと</h2>
+      <div class="form-group">
+        <label for="userGoal">一番の目的</label>
+        <select id="userGoal">
+          <option value="">選択してください</option>
+          <option value="認知拡大・ブランディング">認知拡大・ブランディング</option>
+          <option value="新規集客・売上アップ">新規集客・売上アップ</option>
+          <option value="フォロワーを増やしたい">フォロワーを増やしたい</option>
+          <option value="採用強化">採用強化</option>
+          <option value="企業案件（PR）を受けたい">企業案件（PR）を受けたい</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>気になっていること（複数選択可）</label>
+        <div class="questions-grid">
+          <label class="question-item"><input type="checkbox"><span>投稿は続けているが伸びない</span></label>
+          <label class="question-item"><input type="checkbox"><span>何を投稿すればいいかわからない</span></label>
+          <label class="question-item"><input type="checkbox"><span>再生数は出るがフォローされない</span></label>
+          <label class="question-item"><input type="checkbox"><span>プロフィールに自信がない</span></label>
+          <label class="question-item"><input type="checkbox"><span>集客・売上につながっていない</span></label>
+          <label class="question-item"><input type="checkbox"><span>競合と比べてどうかを知りたい</span></label>
+          <label class="question-item"><input type="checkbox"><span>分析の仕方がわからない</span></label>
+          <label class="question-item"><input type="checkbox"><span>撮影・編集に時間がかかりすぎる</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="form-group">
+        <label for="userNote">その他、伝えておきたいこと <span class="opt">（任意）</span></label>
+        <textarea id="userNote" rows="3" placeholder="目標の数字や、特に見てほしい点などあればご記入ください"></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="sendToLineButton">無料診断を申し込む</button>
+      <p class="hint">ボタンを押すとLINEが開きます。内容を確認して送信してください。</p>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

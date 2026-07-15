@@ -1,0 +1,135 @@
+/* 全体設定 — solezore ブランド色（紺 #1F3D66 / アクセント #5D7DA0）
+   既存3本（紫・TikTok黒・紺グレー）は各々の配色。新規はリッチメニューと同じブランド色で揃える。 */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #eef2f7;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #1f3d66;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+p.lead {
+  font-size: 0.9rem;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.notice {
+  font-size: 0.85rem;
+  color: #1f3d66;
+  background: #f6f8fb;
+  border: 1px solid #d7e0ec;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 2rem;
+}
+
+.notice strong { color: #1f3d66; }
+
+.section {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #e5eaf0;
+  box-shadow: 0 2px 4px rgba(31, 61, 102, 0.06);
+}
+
+.section h2 {
+  font-size: 1rem;
+  margin: 0 0 15px;
+  color: #1f3d66;
+  border-left: 4px solid #5d7da0;
+  padding-left: 10px;
+}
+
+.form-group { margin-bottom: 18px; }
+.section label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+.section label .opt { font-weight: normal; color: #8a95a5; font-size: 0.8rem; }
+
+.section input, .section select, .section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7e0ec;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafcfe;
+  box-sizing: border-box;
+}
+
+.section input:focus, .section select:focus, .section textarea:focus {
+  outline: 2px solid #5d7da0;
+  outline-offset: 1px;
+}
+
+/* チェックボックス項目 */
+.questions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.question-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px !important;
+  background: #fafcfe;
+  border: 1px solid #e5eaf0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: normal !important;
+  margin-bottom: 0 !important;
+}
+
+.question-item input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 12px 0 0 !important;
+  flex-shrink: 0 !important;
+  accent-color: #1f3d66;
+}
+
+.actions { text-align: center; margin-top: 30px; }
+
+#sendToLineButton {
+  display: inline-block;
+  padding: 16px 44px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 999px;
+  border: none;
+  background: #1f3d66;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(31, 61, 102, 0.3);
+  cursor: pointer;
+}
+
+#sendToLineButton:active { transform: translateY(1px); }
+
+.actions .hint {
+  font-size: 0.8rem;
+  color: #8a95a5;
+  margin-top: 12px;
+}
+
+@media (min-width: 600px) {
+  .questions-grid { grid-template-columns: 1fr 1fr; }
+}
