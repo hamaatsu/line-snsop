@@ -79,6 +79,10 @@ ${genres.length > 0 ? genres.join('\n') : "未選択"}
     // LINE起動 (@011rlbwn)
     const yourLineId = "@011rlbwn"; 
     const encodedMsg = encodeURIComponent(messageText);
+    // 送信ボタンが押されたことを GA4 に残す（どのフォームが実際に使われているか分かるように）
+    if (typeof gtag === "function") {
+      gtag("event", "line_form_submit", { form_name: "influencer" });
+    }
     window.location.href = `https://line.me/R/oaMessage/${yourLineId}/?${encodedMsg}`;
   });
 });
