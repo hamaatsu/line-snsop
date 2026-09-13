@@ -11,7 +11,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-1RQZ3CVS83');
+    // solezore.co.jp から移ってきたときは参照元で上書きしない（最初の流入元＝ChatGPT などを残すため）
+    var solRef = document.referrer || '';
+    gtag('config', 'G-1RQZ3CVS83', /^https?:\/\/([a-z0-9-]+\.)*solezore\.co\.jp\//i.test(solRef) ? { ignore_referrer: true } : {});
   </script>
   <link rel="stylesheet" href="./style.css">
 </head>

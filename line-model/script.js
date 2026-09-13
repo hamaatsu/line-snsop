@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const gender = val("userGender");
     const age = val("userAge");
     const area = val("userArea");
-    const faceOk = val("faceOk");
+    // 顔出しできる方だけを募集している（2026-09-12 濵田さん決定）。チェックが無ければ送らせない
+    const faceOk = document.getElementById("faceOk").checked ? "顔出しOK" : "";
     const experience = val("userExperience");
     const refUrl = val("refUrl");
     const note = val("userNote");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gender) missing.push("性別");
     if (!age) missing.push("年齢");
     if (!area) missing.push("居住地・撮影に行けるエリア");
-    if (!faceOk) missing.push("顔出し");
+    if (!faceOk) missing.push("お顔を出しての出演ができること（応募条件）");
     if (!types.length) missing.push("対応できる撮影（1つ以上）");
     if (missing.length) {
       alert("次の項目が未入力です。\n\n・" + missing.join("\n・"));
